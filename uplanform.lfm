@@ -1,0 +1,224 @@
+object PlanForm: TPlanForm
+  Left = 505
+  Height = 168
+  Top = 256
+  Width = 657
+  BorderStyle = bsDialog
+  Caption = 'Modify Planner'
+  ClientHeight = 168
+  ClientWidth = 657
+  Position = poMainFormCenter
+  LCLVersion = '1.8.4.0'
+  object LookupComboCourses: TRxDBLookupCombo
+    Left = 80
+    Height = 29
+    Top = 48
+    Width = 496
+    AutoSize = True
+    ButtonOnlyWhenFocused = False
+    ButtonWidth = 24
+    Color = clWindow
+    DirectInput = False
+    PopUpFormOptions.Columns = <>
+    Flat = False
+    Glyph.Data = {
+      C2000000424DC200000000000000360000002800000007000000050000000100
+      2000000000008C00000064000000640000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000FF0000000000000000000000000000000000000000000000FF0000
+      00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF0000000000000000000000000000000000000000000000000000
+      000000000000
+    }
+    NumGlyphs = 1
+    OnChange = LookupComboCoursesChange
+    ParentColor = False
+    ReadOnly = False
+    TabOrder = 0
+    TabStop = True
+    LookupDisplay = 'name'
+    LookupField = 'id'
+    LookupSource = Data.DCourses
+    UnfindedValue = rxufLastSuccessful
+  end
+  object LookupComboSubjects: TRxDBLookupCombo
+    Left = 80
+    Height = 29
+    Top = 88
+    Width = 496
+    AutoSize = True
+    ButtonOnlyWhenFocused = False
+    ButtonWidth = 24
+    Color = clWindow
+    DirectInput = False
+    PopUpFormOptions.Columns = <>
+    Flat = False
+    Glyph.Data = {
+      C2000000424DC200000000000000360000002800000007000000050000000100
+      2000000000008C00000064000000640000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000FF0000000000000000000000000000000000000000000000FF0000
+      00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF0000000000000000000000000000000000000000000000000000
+      000000000000
+    }
+    NumGlyphs = 1
+    ParentColor = False
+    ReadOnly = False
+    TabOrder = 1
+    TabStop = True
+    LookupDisplay = 'name'
+    LookupField = 'id'
+    LookupSource = Data.DCourseSubjects
+    UnfindedValue = rxufLastSuccessful
+  end
+  object LabelCalendar: TLabel
+    Left = 8
+    Height = 29
+    Top = 48
+    Width = 72
+    AutoSize = False
+    Caption = 'Course'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar1: TLabel
+    Left = 8
+    Height = 29
+    Top = 88
+    Width = 72
+    AutoSize = False
+    Caption = 'Subject'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar3: TLabel
+    Left = 8
+    Height = 27
+    Top = 128
+    Width = 72
+    AutoSize = False
+    Caption = 'From'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar4: TLabel
+    Left = 200
+    Height = 27
+    Top = 128
+    Width = 72
+    AutoSize = False
+    Caption = 'To'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object BOK: TBitBtn
+    Left = 489
+    Height = 30
+    Top = 128
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    OnClick = BOKClick
+    TabOrder = 2
+  end
+  object BCancel: TBitBtn
+    Left = 573
+    Height = 30
+    Top = 128
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+  object RxFromDate: TRxDateEdit
+    Left = 80
+    Height = 27
+    Top = 128
+    Width = 103
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    MaxLength = 10
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 4
+    Text = '  -  -    '
+  end
+  object RxToDate: TRxDateEdit
+    Left = 272
+    Height = 27
+    Top = 128
+    Width = 103
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    MaxLength = 10
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 5
+    Text = '  -  -    '
+  end
+  object CBAllCourses: TCheckBox
+    Left = 584
+    Height = 29
+    Top = 48
+    Width = 64
+    AutoSize = False
+    Caption = 'All'
+    OnChange = CBAllCoursesChange
+    TabOrder = 6
+  end
+  object CBAllSubjects: TCheckBox
+    Left = 584
+    Height = 29
+    Top = 88
+    Width = 64
+    AutoSize = False
+    Caption = 'All'
+    OnChange = CBAllSubjectsChange
+    TabOrder = 7
+  end
+  object SelectAction: TRadioGroup
+    Left = 80
+    Height = 29
+    Top = 8
+    Width = 296
+    AutoFill = True
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 3
+    ClientHeight = 27
+    ClientWidth = 294
+    Columns = 3
+    ItemIndex = 0
+    Items.Strings = (
+      'Add'
+      'Remove'
+    )
+    TabOrder = 8
+  end
+  object LabelCalendar2: TLabel
+    Left = 8
+    Height = 29
+    Top = 8
+    Width = 72
+    AutoSize = False
+    Caption = 'Action'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object CBActiveEvent: TCheckBox
+    Left = 384
+    Height = 29
+    Top = 8
+    Width = 264
+    AutoSize = False
+    Caption = 'Active Lesson'
+    OnChange = CBActiveEventChange
+    TabOrder = 9
+  end
+end

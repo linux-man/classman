@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="15">
+      <Unit0>
+        <Filename Value="classman.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="45" Y="12"/>
+        <UsageCount Value="242"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Main"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMain"/>
+        <TopLine Value="59"/>
+        <CursorPos X="25" Y="72"/>
+        <UsageCount Value="242"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="uframecourses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameCourses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFrameCourses"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="375"/>
+        <CursorPos X="34" Y="384"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
+          <TopLine Value="-1"/>
+          <CursorPos X="-1" Y="-1"/>
+        </ExtraEditor1>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="udata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Data"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uData"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="157"/>
+        <CursorPos X="47" Y="165"/>
+        <UsageCount Value="212"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uframeschedule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameSchedule"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFrameSchedule"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="557"/>
+        <CursorPos X="3" Y="567"/>
+        <UsageCount Value="203"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uschedform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SchedForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSchedForm"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="122"/>
+        <CursorPos X="70" Y="132"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="uplanform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PlanForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPlanForm"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="107"/>
+        <CursorPos X="33" Y="108"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uframesubjects.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameSubjects"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFrameSubjects"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="353"/>
+        <CursorPos Y="372"/>
+        <UsageCount Value="191"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="uframeevaluation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameEvaluation"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFrameEvaluation"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="17" Y="8"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uframeplanning.pas"/>
+        <ComponentName Value="FramePlanning"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFramePlanning"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="53"/>
+        <CursorPos X="23" Y="58"/>
+        <UsageCount Value="185"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../components/tvplanit/source/vpdata.pas"/>
+        <UnitName Value="VpData"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1228"/>
+        <CursorPos Y="1240"/>
+        <UsageCount Value="41"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../components/tvplanit/source/vpdayview.pas"/>
+        <UnitName Value="VpDayView"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="515"/>
+        <CursorPos X="5" Y="537"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../Documentos/projectos/teachers/uframeplanning.pas"/>
+        <ComponentName Value="FramePlanning"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="uFramePlanning"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="240"/>
+        <CursorPos X="33" Y="250"/>
+        <UsageCount Value="9"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="/usr/share/lazarus/1.8.4/ide/lazarus.pp"/>
+        <UnitName Value="Lazarus"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="142"/>
+        <CursorPos Y="161"/>
+        <UsageCount Value="10"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../../components/tvplanit/source/vpdbds.pas"/>
+        <UnitName Value="VpDBDS"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1857"/>
+        <CursorPos Y="1870"/>
+        <UsageCount Value="10"/>
+      </Unit14>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="udata.pas"/>
+        <Caret Line="87" Column="30" TopLine="77"/>
+      </Position1>
+      <Position2>
+        <Filename Value="udata.pas"/>
+        <Caret Line="173" TopLine="163"/>
+      </Position2>
+      <Position3>
+        <Filename Value="umain.pas"/>
+        <Caret Line="76" TopLine="60"/>
+      </Position3>
+      <Position4>
+        <Filename Value="udata.pas"/>
+        <Caret Line="6" Column="81"/>
+      </Position4>
+      <Position5>
+        <Filename Value="udata.pas"/>
+        <Caret Line="80" Column="35" TopLine="64"/>
+      </Position5>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

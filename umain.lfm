@@ -1,0 +1,70 @@
+object Main: TMain
+  Left = 416
+  Height = 500
+  Top = 154
+  Width = 864
+  Caption = 'Main'
+  ClientHeight = 500
+  ClientWidth = 864
+  Constraints.MinHeight = 500
+  Constraints.MinWidth = 500
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  object ToolBar: TToolBar
+    Left = 0
+    Top = 0
+    Width = 864
+    ButtonHeight = 30
+    ButtonWidth = 64
+    Images = ImageListToolBar
+    ParentShowHint = False
+    ShowCaptions = True
+    ShowHint = True
+    TabOrder = 0
+    Wrapable = False
+    object TBSubjects: TToolButton
+      Left = 1
+      Hint = 'Subjects'
+      Top = 2
+      Caption = 'Subjects'
+      Grouped = True
+      OnClick = TBSubjectsClick
+      Style = tbsCheck
+    end
+    object TBSchedule: TToolButton
+      Left = 129
+      Hint = 'Schedule'
+      Top = 2
+      Caption = 'Schedule'
+      Grouped = True
+      OnClick = TBScheduleClick
+      Style = tbsCheck
+    end
+    object TBCourses: TToolButton
+      Left = 65
+      Hint = 'Courses'
+      Top = 2
+      Caption = 'Courses'
+      Grouped = True
+      OnClick = TBCoursesClick
+      Style = tbsCheck
+    end
+    object TBEvaluation: TToolButton
+      Left = 193
+      Hint = 'Evaluation'
+      Top = 2
+      Caption = 'Evaluation'
+      Grouped = True
+      OnClick = TBEvaluationClick
+      Style = tbsCheck
+    end
+  end
+  object ImageListToolBar: TImageList
+    Height = 64
+    Width = 64
+    left = 424
+    top = 16
+  end
+end

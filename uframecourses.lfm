@@ -1,0 +1,1702 @@
+object FrameCourses: TFrameCourses
+  Left = 0
+  Height = 562
+  Top = 0
+  Width = 1000
+  ClientHeight = 562
+  ClientWidth = 1000
+  TabOrder = 0
+  DesignLeft = 342
+  DesignTop = 157
+  object PageCourses: TPageControl
+    Left = 0
+    Height = 516
+    Top = 0
+    Width = 1000
+    ActivePage = TabCourses
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = tpLeft
+    OnChange = PageCoursesChange
+    OnChanging = PageCoursesChanging
+    object TabCourses: TTabSheet
+      Caption = 'Courses'
+      ClientHeight = 510
+      ClientWidth = 930
+      object PCourses: TPanel
+        Left = 0
+        Height = 510
+        Top = 0
+        Width = 294
+        Align = alLeft
+        BevelOuter = bvNone
+        ClientHeight = 510
+        ClientWidth = 294
+        Constraints.MinWidth = 294
+        TabOrder = 0
+        OnEnter = PanelEnter
+        object GridCourses: TRxDBGrid
+          Left = 0
+          Height = 367
+          Top = 0
+          Width = 294
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              SizePriority = 0
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Course'
+              Width = 80
+              FieldName = 'code'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Name'
+              Width = 200
+              FieldName = 'name'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = Data.DCourses
+          DefaultRowHeight = 27
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+          Scrollbars = ssAutoBoth
+          TabOrder = 0
+        end
+        object PCoursesSB: TScrollBox
+          Left = 0
+          Height = 143
+          Top = 367
+          Width = 294
+          HorzScrollBar.Page = 176
+          VertScrollBar.Page = 137
+          Align = alBottom
+          BorderStyle = bsNone
+          ClientHeight = 143
+          ClientWidth = 294
+          TabOrder = 1
+          object Label27: TLabel
+            Left = 8
+            Height = 27
+            Top = 8
+            Width = 72
+            AutoSize = False
+            Caption = 'Begin'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object Label28: TLabel
+            Left = 8
+            Height = 27
+            Top = 72
+            Width = 72
+            AutoSize = False
+            Caption = 'Notes'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object DBMemo10: TDBMemo
+            Left = 80
+            Height = 65
+            Top = 72
+            Width = 206
+            Anchors = [akTop, akLeft, akRight]
+            DataField = 'notes'
+            DataSource = Data.DCourses
+            TabOrder = 0
+          end
+          object DBCheckBox6: TDBCheckBox
+            Left = 262
+            Height = 27
+            Top = 8
+            Width = 24
+            Anchors = [akTop, akRight]
+            DataField = 'active'
+            DataSource = Data.DCourses
+            ParentBiDiMode = False
+            TabOrder = 1
+            ValueChecked = '1'
+            ValueUnchecked = '0'
+          end
+          object Label29: TLabel
+            Left = 190
+            Height = 27
+            Top = 8
+            Width = 72
+            Anchors = [akTop, akRight]
+            AutoSize = False
+            Caption = 'Active'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBDateEdit1: TRxDBDateEdit
+            Left = 80
+            Height = 27
+            Top = 8
+            Width = 96
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 2
+            Text = '  -  -    '
+            DataField = 'begin'
+            DataSource = Data.DCourses
+          end
+          object Label30: TLabel
+            Left = 8
+            Height = 27
+            Top = 40
+            Width = 72
+            AutoSize = False
+            Caption = 'End'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBDateEdit2: TRxDBDateEdit
+            Left = 80
+            Height = 27
+            Top = 40
+            Width = 96
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 3
+            Text = '  -  -    '
+            DataField = 'end'
+            DataSource = Data.DCourses
+          end
+          object UpDownCourses: TUpDown
+            Left = 8
+            Height = 40
+            Top = 97
+            Width = 32
+            Min = 0
+            OnClick = UpDownClick
+            Position = 0
+            TabOrder = 4
+            Wrap = False
+          end
+          object RxDBColorBox1: TRxDBColorBox
+            Left = 186
+            Height = 27
+            Top = 40
+            Width = 100
+            DataField = 'color'
+            DataSource = Data.DCourses
+            DefaultColorColor = clWhite
+            NoneColorColor = clWhite
+            Selected = clNone
+            Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
+            Anchors = [akTop, akRight]
+            AutoSize = False
+            ItemHeight = 0
+            TabOrder = 5
+          end
+        end
+      end
+      object PCourseSubjects: TPanel
+        Left = 299
+        Height = 510
+        Top = 0
+        Width = 294
+        Align = alLeft
+        BevelOuter = bvNone
+        ClientHeight = 510
+        ClientWidth = 294
+        Constraints.MinWidth = 294
+        TabOrder = 1
+        OnEnter = PanelEnter
+        object GridCourseSubjects: TRxDBGrid
+          Left = 0
+          Height = 367
+          Top = 0
+          Width = 294
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              PickList.Strings = (
+                'Educação Física'
+                'Fisico-Quimica'
+                'Inglês'
+                'Matemática'
+                'Português'
+              )
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Subject'
+              Width = 280
+              FieldName = 'name'
+              DirectInput = False
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = Data.DCourseSubjects
+          DefaultRowHeight = 27
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+          Scrollbars = ssAutoBoth
+          TabOrder = 0
+        end
+        object PCourseSubjectsSB: TScrollBox
+          Left = 0
+          Height = 143
+          Top = 367
+          Width = 294
+          HorzScrollBar.Page = 176
+          VertScrollBar.Page = 137
+          Align = alBottom
+          BorderStyle = bsNone
+          ClientHeight = 143
+          ClientWidth = 294
+          TabOrder = 1
+          object Label31: TLabel
+            Left = 8
+            Height = 27
+            Top = 40
+            Width = 72
+            AutoSize = False
+            Caption = 'Duration'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object Label32: TLabel
+            Left = 8
+            Height = 27
+            Top = 72
+            Width = 72
+            AutoSize = False
+            Caption = 'Notes'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object DBMemo11: TDBMemo
+            Left = 80
+            Height = 65
+            Top = 72
+            Width = 206
+            Anchors = [akTop, akLeft, akRight]
+            DataField = 'notes'
+            DataSource = Data.DCourseSubjects
+            TabOrder = 0
+          end
+          object DBCheckBox7: TDBCheckBox
+            Left = 262
+            Height = 27
+            Top = 8
+            Width = 24
+            Anchors = [akTop, akRight]
+            DataField = 'active'
+            DataSource = Data.DCourseSubjects
+            ParentBiDiMode = False
+            TabOrder = 1
+            ValueChecked = '1'
+            ValueUnchecked = '0'
+          end
+          object Label33: TLabel
+            Left = 190
+            Height = 27
+            Top = 8
+            Width = 72
+            Anchors = [akTop, akRight]
+            AutoSize = False
+            Caption = 'Active'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBSpinEdit3: TRxDBSpinEdit
+            Left = 80
+            Height = 27
+            Top = 40
+            Width = 56
+            DataField = 'duration'
+            DataSource = Data.DCourseSubjects
+            DecimalPlaces = 0
+            Increment = 1
+            MaxValue = 10000
+            MinValue = 0
+            TabOrder = 2
+            Value = 0
+          end
+          object Label37: TLabel
+            Left = 8
+            Height = 27
+            Top = 8
+            Width = 72
+            AutoSize = False
+            Caption = 'Begin'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBDateEdit3: TRxDBDateEdit
+            Left = 80
+            Height = 27
+            Top = 8
+            Width = 96
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 3
+            Text = '  -  -    '
+            DataField = 'begin'
+            DataSource = Data.DCourseSubjects
+          end
+          object UpDownSubjects: TUpDown
+            Left = 8
+            Height = 40
+            Top = 97
+            Width = 32
+            Min = 0
+            OnClick = UpDownClick
+            Position = 0
+            TabOrder = 4
+            Wrap = False
+          end
+          object RxDBColorBox2: TRxDBColorBox
+            Left = 186
+            Height = 27
+            Top = 40
+            Width = 100
+            DataField = 'color'
+            DataSource = Data.DCourseSubjects
+            DefaultColorColor = clWhite
+            NoneColorColor = clWhite
+            Selected = clNone
+            Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
+            Anchors = [akTop, akLeft, akRight]
+            AutoSize = False
+            ItemHeight = 0
+            TabOrder = 5
+          end
+        end
+      end
+      object SCourses2: TSplitter
+        Left = 593
+        Height = 510
+        Top = 0
+        Width = 5
+        Beveled = True
+      end
+      object PCourseModules: TPanel
+        Left = 598
+        Height = 510
+        Top = 0
+        Width = 332
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 510
+        ClientWidth = 332
+        Constraints.MinWidth = 264
+        TabOrder = 3
+        OnEnter = PanelEnter
+        object PCourseModulesSB: TScrollBox
+          Left = 0
+          Height = 143
+          Top = 367
+          Width = 332
+          HorzScrollBar.Page = 176
+          VertScrollBar.Page = 137
+          Align = alBottom
+          BorderStyle = bsNone
+          ClientHeight = 143
+          ClientWidth = 332
+          Constraints.MinWidth = 294
+          TabOrder = 0
+          object Label34: TLabel
+            Left = 8
+            Height = 27
+            Top = 40
+            Width = 72
+            AutoSize = False
+            Caption = 'Duration'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object Label35: TLabel
+            Left = 8
+            Height = 27
+            Top = 72
+            Width = 72
+            AutoSize = False
+            Caption = 'Notes'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object DBMemo12: TDBMemo
+            Left = 80
+            Height = 65
+            Top = 72
+            Width = 244
+            Anchors = [akTop, akLeft, akRight]
+            DataField = 'notes'
+            DataSource = Data.DCourseModules
+            TabOrder = 0
+          end
+          object DBCheckBox8: TDBCheckBox
+            Left = 300
+            Height = 27
+            Top = 8
+            Width = 24
+            Anchors = [akTop, akRight]
+            DataField = 'active'
+            DataSource = Data.DCourseModules
+            ParentBiDiMode = False
+            TabOrder = 1
+            ValueChecked = '1'
+            ValueUnchecked = '0'
+          end
+          object Label36: TLabel
+            Left = 227
+            Height = 27
+            Top = 8
+            Width = 72
+            Anchors = [akTop, akRight]
+            AutoSize = False
+            Caption = 'Active'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBSpinEdit4: TRxDBSpinEdit
+            Left = 80
+            Height = 27
+            Top = 40
+            Width = 56
+            DataField = 'duration'
+            DataSource = Data.DCourseModules
+            DecimalPlaces = 0
+            Increment = 1
+            MaxValue = 10000
+            MinValue = 0
+            TabOrder = 2
+            Value = 0
+          end
+          object Label38: TLabel
+            Left = 8
+            Height = 27
+            Top = 8
+            Width = 72
+            AutoSize = False
+            Caption = 'Begin'
+            Layout = tlCenter
+            ParentColor = False
+          end
+          object RxDBDateEdit4: TRxDBDateEdit
+            Left = 80
+            Height = 27
+            Top = 8
+            Width = 96
+            ButtonWidth = 23
+            DialogTitle = 'Select a Date'
+            Enabled = False
+            MaxLength = 10
+            PasswordChar = #0
+            PopupColor = clWindow
+            TabOrder = 3
+            Text = '  -  -    '
+            DataField = 'begin'
+            DataSource = Data.DCourseModules
+          end
+          object UpDownModules: TUpDown
+            Left = 8
+            Height = 40
+            Top = 97
+            Width = 32
+            Min = 0
+            OnClick = UpDownClick
+            Position = 0
+            TabOrder = 4
+            Wrap = False
+          end
+        end
+        object GridCourseModules: TRxDBGrid
+          Left = 0
+          Height = 367
+          Top = 0
+          Width = 332
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = False
+          AutoSort = True
+          Columns = <          
+            item
+              PickList.Strings = (
+                'Maaaaaa'
+                'Mbbbbbb'
+              )
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Module'
+              Width = 318
+              FieldName = 'name'
+              DirectInput = False
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = Data.DCourseModules
+          DefaultRowHeight = 27
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+          Scrollbars = ssAutoBoth
+          TabOrder = 1
+        end
+      end
+      object SCourses1: TSplitter
+        Left = 294
+        Height = 510
+        Top = 0
+        Width = 5
+        Beveled = True
+      end
+    end
+    object TabStudents: TTabSheet
+      Caption = 'Students'
+      ClientHeight = 510
+      ClientWidth = 930
+      OnEnter = PanelEnter
+      object SStudents: TSplitter
+        Left = 328
+        Height = 510
+        Top = 0
+        Width = 5
+        Beveled = True
+      end
+      object PStudents: TPanel
+        Left = 0
+        Height = 510
+        Top = 0
+        Width = 328
+        Align = alLeft
+        BevelOuter = bvNone
+        ClientHeight = 510
+        ClientWidth = 328
+        TabOrder = 1
+        OnEnter = PanelEnter
+        object PStudentsCombo: TPanel
+          Left = 0
+          Height = 40
+          Top = 0
+          Width = 328
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 40
+          ClientWidth = 328
+          TabOrder = 0
+          object LookupComboCourses: TRxDBLookupCombo
+            Left = 8
+            Height = 29
+            Top = 6
+            Width = 312
+            AutoSize = True
+            Anchors = [akTop, akLeft, akRight]
+            ButtonOnlyWhenFocused = False
+            ButtonWidth = 24
+            Color = clWindow
+            DirectInput = False
+            PopUpFormOptions.Columns = <>
+            Flat = False
+            Glyph.Data = {
+              C2000000424DC200000000000000360000002800000007000000050000000100
+              2000000000008C00000064000000640000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000FF0000000000000000000000000000000000000000000000FF0000
+              00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+              00FF000000FF0000000000000000000000000000000000000000000000000000
+              000000000000
+            }
+            NumGlyphs = 1
+            ParentColor = False
+            ReadOnly = False
+            TabOrder = 0
+            TabStop = True
+            LookupDisplay = 'name'
+            LookupField = 'id'
+            LookupSource = Data.DCourses
+            UnfindedValue = rxufLastSuccessful
+          end
+        end
+        object GridStudents: TRxDBGrid
+          Left = 0
+          Height = 470
+          Top = 40
+          Width = 328
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = True
+          AutoSort = True
+          Columns = <          
+            item
+              SizePriority = 0
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Nr.'
+              Width = 80
+              FieldName = 'number'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end          
+            item
+              Title.Alignment = taLeftJustify
+              Title.Orientation = toHorizontal
+              Title.Caption = 'Name'
+              Width = 232
+              FieldName = 'name'
+              EditButtons = <>
+              Filter.DropDownRows = 0
+              Filter.EmptyValue = '(Empty)'
+              Filter.NotEmptyValue = '(Not empty)'
+              Filter.AllValue = '(All values)'
+              Filter.EmptyFont.Style = [fsItalic]
+              Filter.ItemIndex = -1
+              Footers = <>
+            end>
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = Data.DStudents
+          DefaultRowHeight = 27
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook, dgDisableDelete, dgDisableInsert]
+          Scrollbars = ssAutoBoth
+          TabOrder = 1
+        end
+      end
+      object PStudentsSB: TScrollBox
+        Left = 333
+        Height = 510
+        Top = 0
+        Width = 566
+        HorzScrollBar.Page = 408
+        HorzScrollBar.Tracking = True
+        VertScrollBar.Page = 510
+        VertScrollBar.Tracking = True
+        Align = alClient
+        BorderStyle = bsNone
+        ClientHeight = 510
+        ClientWidth = 563
+        TabOrder = 2
+        object DBEdit3: TDBEdit
+          Left = 80
+          Height = 27
+          Top = 111
+          Width = 464
+          DataField = 'email'
+          DataSource = Data.DStudents
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label7: TLabel
+          Left = 8
+          Height = 27
+          Top = 111
+          Width = 72
+          AutoSize = False
+          Caption = 'Email'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 8
+          Height = 27
+          Top = 143
+          Width = 72
+          AutoSize = False
+          Caption = 'Phone'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBEdit4: TDBEdit
+          Left = 80
+          Height = 27
+          Top = 143
+          Width = 464
+          DataField = 'phone'
+          DataSource = Data.DStudents
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label9: TLabel
+          Left = 8
+          Height = 27
+          Top = 39
+          Width = 72
+          AutoSize = False
+          Caption = 'Address'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBMemo3: TDBMemo
+          Left = 80
+          Height = 64
+          Top = 39
+          Width = 464
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'address'
+          DataSource = Data.DStudents
+          TabOrder = 2
+        end
+        object Label10: TLabel
+          Left = 8
+          Height = 27
+          Top = 175
+          Width = 72
+          AutoSize = False
+          Caption = 'Notes'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBMemo4: TDBMemo
+          Left = 80
+          Height = 88
+          Top = 175
+          Width = 464
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'notes'
+          DataSource = Data.DStudents
+          TabOrder = 3
+        end
+        object Label11: TLabel
+          Left = 8
+          Height = 27
+          Top = 384
+          Width = 72
+          AutoSize = False
+          Caption = 'Picture'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBImageS: TDBImage
+          Left = 80
+          Height = 180
+          Top = 384
+          Width = 140
+          Center = True
+          DataField = 'picture'
+          DataSource = Data.DStudents
+          Proportional = True
+        end
+        object DBCheckBox2: TDBCheckBox
+          Left = 312
+          Height = 27
+          Top = 384
+          Width = 24
+          DataField = 'active'
+          DataSource = Data.DStudents
+          ParentBiDiMode = False
+          TabOrder = 4
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object Label12: TLabel
+          Left = 240
+          Height = 27
+          Top = 384
+          Width = 72
+          AutoSize = False
+          Caption = 'Active'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 8
+          Height = 27
+          Top = 5
+          Width = 72
+          AutoSize = False
+          Caption = 'Course'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBLookupComboBox3: TDBLookupComboBox
+          Left = 80
+          Height = 31
+          Top = 5
+          Width = 464
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'course'
+          DataSource = Data.DStudents
+          KeyField = 'id'
+          ListField = 'name'
+          ListFieldIndex = 0
+          ListSource = Data.DCourses
+          LookupCache = False
+          Style = csDropDownList
+          TabOrder = 5
+        end
+        object Label14: TLabel
+          Left = 8
+          Height = 27
+          Top = 272
+          Width = 72
+          AutoSize = False
+          Caption = 'Parents'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBMemo5: TDBMemo
+          Left = 80
+          Height = 88
+          Top = 272
+          Width = 464
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'parents'
+          DataSource = Data.DStudents
+          TabOrder = 6
+        end
+        object Label15: TLabel
+          Left = 240
+          Height = 27
+          Top = 416
+          Width = 72
+          AutoSize = False
+          Caption = 'Birth'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object RxDBDateEdit5: TRxDBDateEdit
+          Left = 312
+          Height = 27
+          Top = 416
+          Width = 96
+          ButtonWidth = 23
+          DialogTitle = 'Select a Date'
+          Enabled = False
+          MaxLength = 10
+          PasswordChar = #0
+          PopupColor = clWindow
+          TabOrder = 7
+          Text = '  -  -    '
+          DataField = 'birth'
+          DataSource = Data.DStudents
+        end
+        object BPasteImageS: TBitBtn
+          Left = 240
+          Height = 30
+          Top = 448
+          Width = 75
+          Caption = 'Paste'
+          OnClick = PasteImageClick
+          TabOrder = 8
+        end
+        object BClearImageS: TBitBtn
+          Left = 240
+          Height = 30
+          Top = 480
+          Width = 75
+          Caption = 'Clear'
+          OnClick = ClearImageClick
+          TabOrder = 9
+        end
+      end
+    end
+    object TabTeachers: TTabSheet
+      Caption = 'Teachers'
+      ClientHeight = 510
+      ClientWidth = 930
+      object GridTeachers: TRxDBGrid
+        Left = 0
+        Height = 510
+        Top = 0
+        Width = 328
+        ColumnDefValues.BlobText = '(blob)'
+        TitleButtons = True
+        AutoSort = True
+        Columns = <        
+          item
+            SizePriority = 0
+            Title.Alignment = taLeftJustify
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Nr.'
+            Width = 80
+            FieldName = 'number'
+            EditButtons = <>
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.NotEmptyValue = '(Not empty)'
+            Filter.AllValue = '(All values)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+            Footers = <>
+          end        
+          item
+            Title.Alignment = taLeftJustify
+            Title.Orientation = toHorizontal
+            Title.Caption = 'Name'
+            Width = 232
+            FieldName = 'name'
+            EditButtons = <>
+            Filter.DropDownRows = 0
+            Filter.EmptyValue = '(Empty)'
+            Filter.NotEmptyValue = '(Not empty)'
+            Filter.AllValue = '(All values)'
+            Filter.EmptyFont.Style = [fsItalic]
+            Filter.ItemIndex = -1
+            Footers = <>
+          end>
+        KeyStrokes = <        
+          item
+            Command = rxgcShowFindDlg
+            ShortCut = 16454
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowColumnsDlg
+            ShortCut = 16471
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowFilterDlg
+            ShortCut = 16468
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowSortDlg
+            ShortCut = 16467
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowQuickFilter
+            ShortCut = 16465
+            Enabled = True
+          end        
+          item
+            Command = rxgcHideQuickFilter
+            ShortCut = 16456
+            Enabled = True
+          end        
+          item
+            Command = rxgcSelectAll
+            ShortCut = 16449
+            Enabled = True
+          end        
+          item
+            Command = rxgcDeSelectAll
+            ShortCut = 16429
+            Enabled = True
+          end        
+          item
+            Command = rxgcInvertSelection
+            ShortCut = 16426
+            Enabled = True
+          end        
+          item
+            Command = rxgcOptimizeColumnsWidth
+            ShortCut = 16427
+            Enabled = True
+          end        
+          item
+            Command = rxgcCopyCellValue
+            ShortCut = 16451
+            Enabled = True
+          end>
+        FooterOptions.DrawFullLine = False
+        SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+        SearchOptions.FromStart = False
+        OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+        Align = alLeft
+        AutoFillColumns = True
+        Color = clWindow
+        DrawFullLine = False
+        FocusColor = clRed
+        SelectedColor = clHighlight
+        GridLineStyle = psSolid
+        DataSource = Data.DTeachers
+        DefaultRowHeight = 27
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook, dgDisableDelete, dgDisableInsert]
+        Scrollbars = ssAutoBoth
+        TabOrder = 0
+        OnEnter = PanelEnter
+      end
+      object STeachers: TSplitter
+        Left = 328
+        Height = 510
+        Top = 0
+        Width = 5
+        Beveled = True
+      end
+      object PTeachersSB: TScrollBox
+        Left = 333
+        Height = 510
+        Top = 0
+        Width = 566
+        HorzScrollBar.Page = 336
+        HorzScrollBar.Tracking = True
+        VertScrollBar.Page = 420
+        VertScrollBar.Tracking = True
+        Align = alClient
+        BorderStyle = bsNone
+        ClientHeight = 510
+        ClientWidth = 566
+        TabOrder = 2
+        object Label3: TLabel
+          Left = 8
+          Height = 27
+          Top = 8
+          Width = 72
+          AutoSize = False
+          Caption = 'Address'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBMemo1: TDBMemo
+          Left = 80
+          Height = 64
+          Top = 8
+          Width = 478
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'address'
+          DataSource = Data.DTeachers
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 8
+          Height = 27
+          Top = 80
+          Width = 72
+          AutoSize = False
+          Caption = 'Email'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 80
+          Height = 27
+          Top = 80
+          Width = 478
+          DataField = 'email'
+          DataSource = Data.DTeachers
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label2: TLabel
+          Left = 8
+          Height = 27
+          Top = 112
+          Width = 72
+          AutoSize = False
+          Caption = 'Phone'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBEdit2: TDBEdit
+          Left = 80
+          Height = 27
+          Top = 112
+          Width = 478
+          DataField = 'phone'
+          DataSource = Data.DTeachers
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label4: TLabel
+          Left = 8
+          Height = 27
+          Top = 144
+          Width = 72
+          AutoSize = False
+          Caption = 'Notes'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBMemo2: TDBMemo
+          Left = 80
+          Height = 88
+          Top = 144
+          Width = 478
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'notes'
+          DataSource = Data.DTeachers
+          TabOrder = 3
+        end
+        object Label5: TLabel
+          Left = 8
+          Height = 27
+          Top = 240
+          Width = 72
+          AutoSize = False
+          Caption = 'Picture'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBImageT: TDBImage
+          Left = 80
+          Height = 180
+          Top = 240
+          Width = 140
+          Center = True
+          DataField = 'picture'
+          DataSource = Data.DTeachers
+          Proportional = True
+        end
+        object Label6: TLabel
+          Left = 240
+          Height = 27
+          Top = 240
+          Width = 72
+          AutoSize = False
+          Caption = 'Active'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object DBCheckBox1: TDBCheckBox
+          Left = 312
+          Height = 27
+          Top = 240
+          Width = 24
+          DataField = 'active'
+          DataSource = Data.DTeachers
+          ParentBiDiMode = False
+          TabOrder = 4
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object BPasteImageT: TBitBtn
+          Left = 240
+          Height = 30
+          Top = 272
+          Width = 75
+          Caption = 'Paste'
+          OnClick = PasteImageClick
+          TabOrder = 5
+        end
+        object BClearImageT: TBitBtn
+          Left = 240
+          Height = 30
+          Top = 304
+          Width = 75
+          Caption = 'Clear'
+          OnClick = ClearImageClick
+          TabOrder = 6
+        end
+      end
+    end
+  end
+  object PButtons: TPanel
+    Left = 0
+    Height = 46
+    Top = 516
+    Width = 1000
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 46
+    ClientWidth = 1000
+    TabOrder = 1
+    object BOK: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Insert'
+      OnClick = BOKClick
+      TabOrder = 0
+    end
+    object BCancel: TBitBtn
+      Left = 104
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Delete'
+      OnClick = BCancelClick
+      TabOrder = 1
+    end
+    object BSaveAll: TBitBtn
+      Left = 743
+      Height = 30
+      Top = 8
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Save Changes'
+      OnClick = BSaveAllClick
+      TabOrder = 2
+      Visible = False
+    end
+    object BCancelAll: TBitBtn
+      Left = 879
+      Height = 30
+      Top = 8
+      Width = 112
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel Changes'
+      OnClick = BCancelAllClick
+      TabOrder = 3
+      Visible = False
+    end
+  end
+  object OpenFile: TOpenDialog
+    left = 544
+    top = 200
+  end
+  object ImageFile: TImageList
+    Height = 20
+    Width = 20
+    left = 552
+    top = 304
+    Bitmap = {
+      4C69030000001400000014000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000018070707BA0E0E0ED11212
+      12D71B1B1BD90F0F0FD6050505B100000033FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF000101019FCCCCCCFAEDEDEDFFECECECFFEFEFEFFFEEEEEEFFD5D5D5F63F3F
+      3FE8000000AB0000009C0000009A0000009700000095000000920000008F0000
+      008C0000004D00000005FFFFFF00FFFFFF000B0B0BE3D7D7D7FFF4F4F4FFF4F4
+      F4FFF4F4F4FFF4F4F4FFF3F3F3FFECECECFFCACACADB818181BA7C7C7CBB7B7B
+      7BBA7B7B7BB87B7B7BB6767676AE686868A9101010DA00000072FFFFFF00FFFF
+      FF000B0B0BF2E8E8E8FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4
+      F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4
+      F4FF9D9D9DF9030303AFFFFFFF00FFFFFF00090909F1B4B4B4FFA6A6A6FF9D9D
+      9DFF939393FF8D8D8DFF8E8E8EFF909090FF919191FF939393FF949494FF9696
+      96FF9A9A9AFFA2A2A2FFACACACFFB5B5B5FF888888FF060606C7FFFFFF000A07
+      0495534639FF8D7762FF967E67FF9B826AFFA1866DFFA88C72FFAB8E75FFA88D
+      72FFA3886EFF9E836AFF9E846BFFA48B71FFA38A70FF9A8169FF917962FF8670
+      5AFF73614EFF54483BFE090400A5090604EFF2CEAAFFF8D0ABFFF7C298FFF4B6
+      85FFF0AB78FFECA571FFE8A068FFE39961FFDE945AFFDA8E52FFD5884BFFD082
+      44FFCD8041FFCB8143FFD18F56FFDAA16DFFE8B88CFFF0CCA8FF080300E80A07
+      04EFE6BE9AFFF8B483FFFAB583FFF8B280FFF3AD79FFEEA772FFEAA16BFFE59B
+      63FFE0955CFFDB8F54FFD6894DFFD18345FFCC7D3DFFC77636FFC2702EFFBD6A
+      26FFB8641FFF97541BFF0A0500E00B0805E1AA7F5EFFFAB583FFFEBA89FFF9B4
+      82FFF4AE7BFFEFA873FFEAA26BFFE59C64FFE0955CFFDB8F55FFD6894DFFD183
+      45FFCC7D3EFFC77736FFC2712EFFBD6A27FFB8641FFF6B380DFF080400B90C08
+      05BE79563CFFF7B17FFFF8B381FFF6B17EFFF3AC78FFEEA671FFE9A16AFFE49B
+      63FFDF955BFFDA8F54FFD6894CFFD08345FFCB7C3DFFC77636FFC1702EFFBC6A
+      26FFB7641FFF3C2007FE0000007C0000007C523927FEF2AC78FFF3AD79FFF2AB
+      78FFEFA873FFEBA36EFFE79E67FFE39960FFDE9359FFD98D52FFD4874BFFD081
+      43FFCB7B3CFFC67534FFC16F2DFFBC6925FFB7631EFF1F1004FB0000004A0000
+      004834251AF7EDA570FFEEA671FFEDA570FFEBA36DFFE89F68FFE49A62FFE095
+      5CFFDC9056FFD78B4FFFD38548FFCE7F41FFC97A3AFFC47432FFC06E2BFFBB68
+      24FFB6621CFF0C0602F8000000200000001C120D09F7E89F68FFE9A069FFE89F
+      68FFE69D66FFE49A62FFE0965DFFDD9257FFD98D51FFD5884BFFD08244FFCC7D
+      3EFFC77737FFC37230FFBE6C28FFB96621FFB35F19FF050301F900000001FFFF
+      FF00050403F9D5905AFFE39961FFE39960FFE1975EFFDF945BFFDC9157FFD98D
+      52FFD6894CFFD28447FFCE7F40FFC97A3AFFC57533FFC06F2CFFBC6925FFB764
+      1EFF9F5314FF0F0803E6FFFFFF00FFFFFF000E0A08CF95633CFFE3965EFFE798
+      5FFFE7975FFFE5985EFFE5965CFFE5945BFFE4935AFFE39358FFE08F54FFDC8A
+      4EFFD38448FFC97C40FFBB7037FFA15B25FF49280CFF080400B1FFFFFF00FFFF
+      FF00000000440F0C0AF0060403FC030201FE030202FE030202FE030202FE0302
+      01FE030201FE030202FE040302FD020201FE010101FE020201FD0B0906F51611
+      0DE7120E0AC20000001BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000000000F0000
+      006B0A0907D4241F17FD272219FE0D0C08E20000007F00000019000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000003000000A3221E16FBAF9B70FFE0C58FFFE4C992FFBEA8
+      7AFF3F3829FC000000C30000000C000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000F000000AE2A251BFFDFC6
+      8FFFE0C68FFFA7936BFFA49169FFD5BC89FFEACE95FF393224FF000000980000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0003000000A3242017FDCEB684FFC1AB7CFF262218FA010101A5000000931815
+      0FF5C9B281FFB19C71FF000000ED000000000000000000000000000000000000
+      000000000000000000000000000C000000B2282319FFE7CD94FFC6AF7FFF1210
+      0CFD000000990000000700000003000000AB807153FFFDDFA2FF080705FF0000
+      000000000000000000000000000000000000000000000000000400000096221E
+      16FECCB483FFC3AC7DFF262118FA0000008A0000000B000000000000000E0000
+      00BB8A7958FFF3D69BFF090806FF000000000000000000000000000000000000
+      0000000000040000002914110CFBEFD397FFCCB380FF0B0A07FF0000009B0000
+      00060000000000000003000000860F0E0AFEE6CB94FFA38F68FF000000E60000
+      00000000000000000000000000000000000C00000096120E06FB88692FFFE3B1
+      50FFB58D41FF281F0DFF000000BC000000220000000E00000090211D15FEC2AB
+      7CFFD2B986FF28231AFF0000007B000000000000000000000000000000030000
+      00B21E170AFED6A446FFE1AE4AFFE2AE4AFFE2AE4AFFE0AC49FF483818FF0000
+      00D30000008C090906FED1B886FFE2C791FF16130EFF000000A0000000010000
+      0000000000000000000F000000A3231B0CFFB58B3CFFB58C3BFFB8934AFFF1C9
+      79FFECC069FFE2AF4BFFC39640FF1A1409FF231F16FFC4AD7EFFD0B885FF2C27
+      1CFF000000A400000014000000000000000000000003000000AE20180BFDCE9E
+      44FFAD8539FF0A0803FF2D271CFFFCDFA1FFFEE0A1FFF7D38BFFF0C776FFD9BD
+      85FFE4CA92FFE1C690FF1D1A12FF0101019E0000000700000000000000000000
+      000F000000A3251D0CFFB78D3CFFB0873AFF221A0BFA0000009B000000BC5248
+      34FFDBC18CFFFFE1A3FFFFE1A3FFFFE1A3FFC4AD7EFF28231AFF000000A40000
+      00120000000000000000000000000000006B1F170AFBC69941FFAC8438FF100C
+      05FD0000008A0000000600000021000000D31D1A13FFDCC28DFFFFE1A3FF7567
+      4BFF12100BFD010101960000000C000000000000000000000000000000000907
+      03DA9C7833FFC79941FF221A0BFA000000990000000B000000000000000E0000
+      008C1F180AFFCD9F49FFB48F46FF110D07FD0000005D00000004000000000000
+      000000000000000000000000000021190BFDC89A42FF947231FF010100A50000
+      0007000000000000000300000090090603FEAE8639FFC79A42FF241C0CFF0101
+      009600000005000000000000000000000000000000000000000000000000231B
+      0BFFCB9C42FF927130FF00000096000000040000000E000000861D160AFEB98E
+      3DFFB98E3DFF1A1408FF000000A40000000C0000000000000000000000000000
+      00000000000000000000000000000C0904E2A98237FFBE933EFF161107F50000
+      00AE000000BB0E0A05FEAC8439FFC89A42FF271E0DFF0101009E000000120000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00803C2E14FDD0A044FFB68C3CFF725825FF7B5F29FFCC9D43FFBA903DFF130F
+      06FF000000A40000000700000000000000000000000000000000000000000000
+      000000000000000000000000000000000019000000C5332811FF9D7933FFE0AC
+      49FFD7A547FF906F2FFF241C0CFF000000A00000001400000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000C00000098000000ED070602FF080603FF000000E60000007B0000
+      0001000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000001F0000005F000000B2000000F1000000FF000000FF000000EF0000
+      00B10000005F0000001F00000000000000000000000000000000000000000000
+      000000000000000000000000000100000073000000F0880200FEC12D00FFDB6B
+      00FFE78A00FFE27000FFDE7000FFC13000FF810000FE000000F0000000730000
+      00010000000000000000000000000000000000000000000000180000009B1100
+      00FDDE6B00FFF1B518FFE57700FFFFF8EAFFF3C13CFFEA9400FFFFF8ECFFE57A
+      00FFF3C347FFE07E00FF000000FD0000009B0000001800000000000000000000
+      0000000000010000009B850200FFEA9600FFFFFDF8FFE78300FFF3BC32FFFFFF
+      FFFFF3C13CFFEA9400FFFFFFFFFFF3BF34FFEA8500FFFFFFFAFFF1B81FFF6B00
+      00FF0000009B00000001000000000000000000000073110000FDEA8F00FFFDF5
+      E0FFFAE5A9FFE06200FFFDF5DBFFFFFDF3FFF3BF37FFEA9100FFFFFDF3FFFDF3
+      DBFFE06400FFFAE5ACFFFFFAECFFF1B81AFF000000FD00000073000000000000
+      001F000000F0D64A00FFE57200FFE57200FFE05F00FFE06200FFE57200FFE572
+      00FFE06200FFDE5600FFE57200FFE57200FFE06400FFE05F00FFE57200FFE572
+      00FFD45100FF000000F00000001F0000005F880500FEF1B81FFFFDF8EAFFFDF8
+      EAFFEC9400FFFAE5ACFFFDF8EAFFFDF8EAFFF3BC2DFFEA8F00FFFDF8EAFFFDF8
+      EAFFFAE7B3FFEA9100FFFDF8EAFFFDF8EAFFF5D67EFF770000FE0000005F0000
+      00B2C33400FFFDEECDFFFFFFFFFFFFFFFDFFE77E00FFFDF3DEFFFFFFFFFFFFFF
+      FFFFF3C13CFFEA9400FFFFFFFFFFFFFFFFFFFDF3DEFFE57E00FFFFFFFFFFFFFF
+      FFFFFFFDF8FFC65100FF000000B1000000F1DB6600FFFFFFFFFFFFFFFFFFFFFD
+      F3FFE57200FFFFF8EAFFFFFFFFFFFFFFFFFFF3C13CFFEA9400FFFFFFFFFFFFFF
+      FFFFFFF8EAFFE57000FFFFFFFAFFFFFFFFFFFFFFFFFFE2A000FF000000EB0000
+      00FFE26400FFEEA400FFEEA400FFEEA200FFDE5600FFEEA200FFEEA400FFEEA4
+      00FFE78500FFE26B00FFEEA400FFEEA400FFEEA200FFDE5800FFECA000FFEEA4
+      00FFEEA400FFE78500FF000000FF000000FFE26900FFF1B011FFF1B00EFFF1AE
+      07FFDE5B00FFEEAE05FFF1B00EFFF1B00EFFEA8D00FFE27000FFF1B00EFFF1B0
+      0EFFEEAE07FFE05B00FFEEAC00FFF1B00EFFF1B00EFFE78F00FF000000FF0000
+      00F5DB6400FFFFFFFFFFFFFFFFFFFFFDF3FFE57200FFFFF8EAFFFFFFFFFFFFFF
+      FFFFF3C13CFFEA9400FFFFFFFFFFFFFFFFFFFDF8EAFFE27000FFFFFFFDFFFFFF
+      FFFFFFFFFFFFE29B00FF000000F5000000B7C13200FFFDEEC6FFFFFFFFFFFFFF
+      FDFFE78100FFFDF3DBFFFFFFFFFFFFFFFFFFF3C13CFFEA9400FFFFFFFFFFFFFF
+      FFFFFDF3DBFFE77E00FFFFFFFFFFFFFFFFFFFFFDF5FFC34C00FF000000B50000
+      005F810000FEF1B311FFFDF5E2FFFDF5E2FFEC9400FFFAE2A4FFFDF5E2FFFDF5
+      E2FFF3BC29FFEA8F00FFFDF5E2FFFDF5E2FFFAE5A9FFEA9400FFFDF5E2FFFDF5
+      E2FFF5D270FF750000FE0000005F0000001F000000F0D44700FFE57500FFE57A
+      00FFE26400FFE06200FFE57A00FFE57A00FFE26600FFE05800FFE57A00FFE57A
+      00FFE06200FFE26600FFE57A00FFE57A00FFD44C00FF000000F00000001F0000
+      000000000073000000FDE78800FFFDF8E7FFFAEABAFFE06200FFFDF5E2FFFFFF
+      FFFFF3C13EFFEA9400FFFFFFFFFFFDF5E0FFE06200FFFAEABAFFFFFDF3FFF1B0
+      07FF000000FD00000073000000000000000000000002000000A1690000FFE78A
+      00FFFFFAF3FFEA8D00FFF1BA21FFFFFFFFFFF3C13CFFEA9400FFFFFFFFFFF1BA
+      21FFEA8D00FFFFFFFAFFEEAC00FF560000FF0000009E00000001000000000000
+      00000000000000000018000000A1000000FDD65F00FFF1B005FFE57200FFFDF5
+      E2FFF3C13CFFEA9400FFFFF5E2FFE57700FFF3BF32FFD97200FF000000FD0000
+      009E000000180000000000000000000000000000000000000000000000020000
+      0073000000F0770000FEBF2B00FFD65D00FFE57C00FFE26600FFD65F00FFBF2B
+      00FF750000FE000000F000000073000000010000000000000000000000000000
+      0000000000000000000000000000000000000000001F0000005F000000B70000
+      00F5000000FF000000FF000000F5000000B50000005F0000001F000000000000
+      0000000000000000000000000000
+    }
+  end
+end

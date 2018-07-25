@@ -1,0 +1,672 @@
+object Data: TData
+  OldCreateOrder = False
+  Height = 435
+  HorizontalOffset = 432
+  VerticalOffset = 202
+  Width = 798
+  PPI = 96
+  object ZSubjects: TZTable
+    Connection = ZConnection
+    SortedFields = 'code'
+    AfterScroll = ZSubjectsAfterScroll
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'subjects'
+    IndexFieldNames = 'code Asc'
+    left = 32
+    top = 88
+  end
+  object ZConnection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'codepage='
+      'controls_cp=CP_UTF8'
+    )
+    AutoCommit = False
+    OnCommit = ZConnectionCommitRollback
+    OnRollback = ZConnectionCommitRollback
+    Port = 0
+    Database = '/home/joao/teachers/teachers.db'
+    Protocol = 'sqlite-3'
+    left = 32
+    top = 24
+  end
+  object RxSortZeos: TRxSortZeos
+    left = 112
+    top = 24
+  end
+  object DSubjects: TDataSource
+    DataSet = ZSubjects
+    left = 32
+    top = 144
+  end
+  object DModules: TDataSource
+    DataSet = ZModules
+    left = 32
+    top = 256
+  end
+  object DCourses: TDataSource
+    DataSet = ZCourses
+    left = 112
+    top = 144
+  end
+  object DStudents: TDataSource
+    DataSet = ZStudents
+    left = 200
+    top = 144
+  end
+  object DTeachers: TDataSource
+    DataSet = ZTeachers
+    left = 280
+    top = 144
+  end
+  object ZModules: TZTable
+    Connection = ZConnection
+    SortedFields = 'code'
+    AfterScroll = ZSubjectsAfterScroll
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'modules'
+    MasterFields = 'id'
+    MasterSource = DSubjects
+    LinkedFields = 'subject'
+    IndexFieldNames = 'code Asc'
+    left = 32
+    top = 200
+  end
+  object ZCourses: TZTable
+    Connection = ZConnection
+    SortedFields = 'pos'
+    Filter = 'active=true'
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'courses'
+    IndexFieldNames = 'pos Asc'
+    left = 112
+    top = 88
+  end
+  object ZStudents: TZTable
+    Connection = ZConnection
+    SortedFields = 'number'
+    Filter = 'active=true'
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'students'
+    MasterFields = 'id'
+    MasterSource = DCourses
+    LinkedFields = 'course'
+    IndexFieldNames = 'number Asc'
+    left = 200
+    top = 88
+  end
+  object ZTeachers: TZTable
+    Connection = ZConnection
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'teachers'
+    left = 280
+    top = 88
+  end
+  object ZUnlinkedModules: TZTable
+    Connection = ZConnection
+    SortedFields = 'code, name'
+    TableName = 'modules'
+    MasterFields = 'subject'
+    MasterSource = DCourseSubjects
+    LinkedFields = 'subject'
+    IndexFieldNames = 'code Asc, name Asc'
+    left = 200
+    top = 280
+  end
+  object ZHolidays: TZTable
+    Connection = ZConnection
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'holidays'
+    left = 360
+    top = 88
+  end
+  object ZPlanning: TZTable
+    Connection = ZConnection
+    SortedFields = 'pos'
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'planning'
+    MasterFields = 'id'
+    MasterSource = DModules
+    LinkedFields = 'module'
+    IndexFieldNames = 'pos Asc'
+    left = 480
+    top = 88
+  end
+  object DPlanning: TDataSource
+    DataSet = ZPlanning
+    left = 480
+    top = 144
+  end
+  object DMethodology: TDataSource
+    DataSet = ZMethodology
+    left = 560
+    top = 144
+  end
+  object DPlanningMaterials: TDataSource
+    DataSet = ZPlanningMaterials
+    left = 480
+    top = 256
+  end
+  object ZPlanningMaterials: TZTable
+    Connection = ZConnection
+    SortedFields = 'title'
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    BeforePost = TableBeforePost
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'planningmaterials'
+    MasterFields = 'id'
+    MasterSource = DPlanning
+    LinkedFields = 'session'
+    IndexFieldNames = 'title Asc'
+    left = 480
+    top = 200
+  end
+  object ZMethodology: TZQuery
+    Connection = ZConnection
+    SortedFields = 'method'
+    SQL.Strings = (
+      'SELECT DISTINCT method FROM planning;'
+    )
+    Params = <>
+    IndexFieldNames = 'method Asc'
+    left = 560
+    top = 88
+  end
+  object ZQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    Params = <>
+    left = 200
+    top = 24
+  end
+  object ZCourseSubjects: TZTable
+    Connection = ZConnection
+    SortedFields = 'pos'
+    Filter = 'active=true'
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    BeforePost = ZCourseSubModsBeforePost
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'coursesubjects'
+    MasterFields = 'id'
+    MasterSource = DCourses
+    LinkedFields = 'course'
+    IndexFieldNames = 'pos Asc'
+    left = 112
+    top = 200
+    object ZCourseSubjectsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectscourse: TLargeintField
+      FieldKind = fkData
+      FieldName = 'course'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZCourseSubjectssubject: TLargeintField
+      FieldKind = fkData
+      FieldName = 'subject'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectsname: TStringField
+      FieldKind = fkLookup
+      FieldName = 'name'
+      Index = 3
+      KeyFields = 'subject'
+      LookupCache = False
+      LookupDataSet = ZSubjects
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object ZCourseSubjectscode: TStringField
+      FieldKind = fkLookup
+      FieldName = 'code'
+      Index = 4
+      KeyFields = 'subject'
+      LookupCache = False
+      LookupDataSet = ZSubjects
+      LookupKeyFields = 'id'
+      LookupResultField = 'code'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object ZCourseSubjectsbegin: TDateField
+      FieldKind = fkData
+      FieldName = 'begin'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectsduration: TLargeintField
+      FieldKind = fkData
+      FieldName = 'duration'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectsnotes: TMemoField
+      FieldKind = fkData
+      FieldName = 'notes'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object ZCourseSubjectspos: TLargeintField
+      FieldKind = fkData
+      FieldName = 'pos'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectscolor: TLargeintField
+      FieldKind = fkData
+      FieldName = 'color'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseSubjectsactive: TLargeintField
+      FieldKind = fkData
+      FieldName = 'active'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZCourseModules: TZTable
+    Connection = ZConnection
+    SortedFields = 'pos'
+    Filter = 'active=true'
+    BeforeInsert = TableBeforeInsert
+    AfterInsert = TableAfterInsert
+    AfterEdit = TableAfterEdit
+    BeforePost = ZCourseSubModsBeforePost
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    BeforeDelete = TableBeforeDelete
+    AfterDelete = TableAfterPostDelete
+    OnPostError = TablePostError
+    TableName = 'coursemodules'
+    MasterFields = 'id'
+    MasterSource = DCourseSubjects
+    LinkedFields = 'subject'
+    IndexFieldNames = 'pos Asc'
+    left = 112
+    top = 312
+    object ZCourseModulesid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseModulessubject: TLargeintField
+      FieldKind = fkData
+      FieldName = 'subject'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZCourseModulesmodule: TLargeintField
+      FieldKind = fkData
+      FieldName = 'module'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZCourseModulesname: TStringField
+      FieldKind = fkLookup
+      FieldName = 'name'
+      Index = 3
+      KeyFields = 'module'
+      LookupCache = False
+      LookupDataSet = ZUnlinkedModules
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ZCourseModulesnameGetText
+      Size = 1020
+    end
+    object ZCourseModulesbegin: TDateField
+      FieldKind = fkData
+      FieldName = 'begin'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseModulesduration: TLargeintField
+      FieldKind = fkData
+      FieldName = 'duration'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseModulesnotes: TMemoField
+      FieldKind = fkData
+      FieldName = 'notes'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object ZCourseModulespos: TLargeintField
+      FieldKind = fkData
+      FieldName = 'pos'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZCourseModulesactive: TLargeintField
+      FieldKind = fkData
+      FieldName = 'active'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object DCourseSubjects: TDataSource
+    DataSet = ZCourseSubjects
+    left = 112
+    top = 256
+  end
+  object DCourseModules: TDataSource
+    DataSet = ZCourseModules
+    left = 112
+    top = 368
+  end
+  object VpZDS: TVpZeosDatastore
+    CategoryColorMap.Category0.Color = clNavy
+    CategoryColorMap.Category0.Description = 'Category 0'
+    CategoryColorMap.Category1.Color = clRed
+    CategoryColorMap.Category1.Description = 'Category 1'
+    CategoryColorMap.Category2.Color = clYellow
+    CategoryColorMap.Category2.Description = 'Category 2'
+    CategoryColorMap.Category3.Color = clLime
+    CategoryColorMap.Category3.Description = 'Category 3'
+    CategoryColorMap.Category4.Color = clPurple
+    CategoryColorMap.Category4.Description = 'Category 4'
+    CategoryColorMap.Category5.Color = clTeal
+    CategoryColorMap.Category5.Description = 'Category 5'
+    CategoryColorMap.Category6.Color = clFuchsia
+    CategoryColorMap.Category6.Description = 'Category 6'
+    CategoryColorMap.Category7.Color = clOlive
+    CategoryColorMap.Category7.Description = 'Category 7'
+    CategoryColorMap.Category8.Color = clAqua
+    CategoryColorMap.Category8.Description = 'Category 8'
+    CategoryColorMap.Category9.Color = clMaroon
+    CategoryColorMap.Category9.Description = 'Category 9'
+    HiddenCategories.BackgroundColor = clSilver
+    HiddenCategories.Color = clGray
+    EnableEventTimer = False
+    PlayEventSounds = False
+    AfterPostEvents = VpZDSAfterPostEvents
+    Connection = ZConnection
+    Daybuffer = 44
+    left = 280
+    top = 24
+  end
+  object VpCL: TVpControlLink
+    DataStore = VpZDS
+    Printer.BottomMargin = 0
+    Printer.DayStart = h_08
+    Printer.DayEnd = h_05
+    Printer.Granularity = gr30Min
+    Printer.LeftMargin = 0
+    Printer.MarginUnits = imAbsolutePixel
+    Printer.PrintFormats = <>
+    Printer.RightMargin = 0
+    Printer.TopMargin = 0
+    left = 360
+    top = 24
+  end
+  object ZSchedCourseSubjects: TZTable
+    Connection = ZConnection
+    Filter = 'active=true'
+    Filtered = True
+    BeforeInsert = TableBeforeInsert
+    OnPostError = TablePostError
+    TableName = 'coursesubjects'
+    left = 280
+    top = 216
+    object ZSchedCourseSubjectsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectscourse: TLargeintField
+      FieldKind = fkData
+      FieldName = 'course'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZSchedCourseSubjectssubject: TLargeintField
+      FieldKind = fkData
+      FieldName = 'subject'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectsname: TStringField
+      FieldKind = fkLookup
+      FieldName = 'name'
+      Index = 3
+      KeyFields = 'subject'
+      LookupCache = False
+      LookupDataSet = ZSubjects
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object ZSchedCourseSubjectscode: TStringField
+      FieldKind = fkLookup
+      FieldName = 'code'
+      Index = 4
+      KeyFields = 'subject'
+      LookupCache = False
+      LookupDataSet = ZSubjects
+      LookupKeyFields = 'id'
+      LookupResultField = 'code'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object ZSchedCourseSubjectsbegin: TDateField
+      FieldKind = fkData
+      FieldName = 'begin'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectsduration: TLargeintField
+      FieldKind = fkData
+      FieldName = 'duration'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectsnotes: TMemoField
+      FieldKind = fkData
+      FieldName = 'notes'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object ZSchedCourseSubjectspos: TLargeintField
+      FieldKind = fkData
+      FieldName = 'pos'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectscolor: TLargeintField
+      FieldKind = fkData
+      FieldName = 'color'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZSchedCourseSubjectsactive: TLargeintField
+      FieldKind = fkData
+      FieldName = 'active'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZEvents: TZTable
+    Connection = ZConnection
+    SortedFields = 'StartTime'
+    AfterScroll = ZEventsAfterScroll
+    Filter = 'ResourceID=2'
+    Filtered = True
+    AfterEdit = TableAfterEdit
+    AfterPost = TableAfterPostDelete
+    AfterCancel = TableAfterCancel
+    AfterDelete = TableAfterPostDelete
+    TableName = 'Events'
+    MasterFields = 'id'
+    MasterSource = DCourseSubjects
+    LinkedFields = 'UserField1'
+    IndexFieldNames = 'StartTime Asc'
+    left = 672
+    top = 88
+  end
+  object DEvents: TDataSource
+    DataSet = ZEvents
+    left = 672
+    top = 144
+  end
+end

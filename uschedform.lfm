@@ -1,0 +1,293 @@
+object SchedForm: TSchedForm
+  Left = 619
+  Height = 422
+  Top = 202
+  Width = 585
+  BorderStyle = bsDialog
+  Caption = 'Edit Event'
+  ClientHeight = 422
+  ClientWidth = 585
+  Position = poMainFormCenter
+  LCLVersion = '1.8.4.0'
+  object LookupComboCourses: TRxDBLookupCombo
+    Left = 80
+    Height = 29
+    Top = 8
+    Width = 496
+    AutoSize = True
+    ButtonOnlyWhenFocused = False
+    ButtonWidth = 24
+    Color = clWindow
+    DirectInput = False
+    PopUpFormOptions.Columns = <>
+    Flat = False
+    Glyph.Data = {
+      C2000000424DC200000000000000360000002800000007000000050000000100
+      2000000000008C00000064000000640000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000FF0000000000000000000000000000000000000000000000FF0000
+      00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF0000000000000000000000000000000000000000000000000000
+      000000000000
+    }
+    NumGlyphs = 1
+    OnChange = LookupComboCoursesChange
+    ParentColor = False
+    ReadOnly = False
+    TabOrder = 0
+    TabStop = True
+    LookupDisplay = 'name'
+    LookupField = 'id'
+    LookupSource = Data.DCourses
+    UnfindedValue = rxufLastSuccessful
+  end
+  object LookupComboSubjects: TRxDBLookupCombo
+    Left = 80
+    Height = 29
+    Top = 48
+    Width = 496
+    AutoSize = True
+    ButtonOnlyWhenFocused = False
+    ButtonWidth = 24
+    Color = clWindow
+    DirectInput = False
+    PopUpFormOptions.Columns = <>
+    Flat = False
+    Glyph.Data = {
+      C2000000424DC200000000000000360000002800000007000000050000000100
+      2000000000008C00000064000000640000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000FF0000000000000000000000000000000000000000000000FF0000
+      00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+      00FF000000FF0000000000000000000000000000000000000000000000000000
+      000000000000
+    }
+    NumGlyphs = 1
+    ParentColor = False
+    ReadOnly = False
+    TabOrder = 1
+    TabStop = True
+    LookupDisplay = 'name'
+    LookupField = 'id'
+    LookupSource = Data.DCourseSubjects
+    UnfindedValue = rxufLastSuccessful
+  end
+  object LabelCalendar: TLabel
+    Left = 8
+    Height = 29
+    Top = 8
+    Width = 72
+    AutoSize = False
+    Caption = 'Course'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar1: TLabel
+    Left = 8
+    Height = 29
+    Top = 48
+    Width = 72
+    AutoSize = False
+    Caption = 'Subject'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelDate: TLabel
+    Left = 8
+    Height = 27
+    Top = 88
+    Width = 72
+    AutoSize = False
+    Caption = 'Weekday'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar3: TLabel
+    Left = 264
+    Height = 27
+    Top = 88
+    Width = 72
+    AutoSize = False
+    Caption = 'Begin'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelCalendar4: TLabel
+    Left = 432
+    Height = 27
+    Top = 88
+    Width = 72
+    AutoSize = False
+    Caption = 'End'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object WeekDayBox: TComboBox
+    Left = 80
+    Height = 27
+    Top = 88
+    Width = 160
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      'Monday'
+      'Tuesday'
+      'Wednesday'
+      'Thursday'
+      'Friday'
+      'Saturday'
+      'Sunday'
+    )
+    Style = csDropDownList
+    TabOrder = 2
+    Text = 'Monday'
+  end
+  object StartTimeEdit: TRxTimeEdit
+    Left = 336
+    Height = 27
+    Top = 88
+    Width = 45
+    ShowSecond = False
+    CharCase = ecNormal
+    MaxLength = 5
+    OnChange = StartTimeEditChange
+    TabOrder = 3
+  end
+  object EndTimeEdit: TRxTimeEdit
+    Left = 504
+    Height = 27
+    Top = 88
+    Width = 45
+    ShowSecond = False
+    CharCase = ecNormal
+    MaxLength = 5
+    OnChange = EndTimeEditChange
+    TabOrder = 4
+  end
+  object BOK: TBitBtn
+    Left = 416
+    Height = 30
+    Top = 384
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    OnClick = BOKClick
+    TabOrder = 5
+  end
+  object BCancel: TBitBtn
+    Left = 501
+    Height = 30
+    Top = 384
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 6
+  end
+  object LabelCalendar5: TLabel
+    Left = 344
+    Height = 29
+    Top = 128
+    Width = 72
+    AutoSize = False
+    Caption = 'Room'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object RoomEdit: TEdit
+    Left = 416
+    Height = 29
+    Top = 128
+    Width = 160
+    AutoSize = False
+    TabOrder = 7
+  end
+  object LabelCalendar6: TLabel
+    Left = 8
+    Height = 29
+    Top = 128
+    Width = 72
+    AutoSize = False
+    Caption = 'Notes'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object NotesMemo: TMemo
+    Left = 80
+    Height = 70
+    Top = 128
+    Width = 248
+    TabOrder = 8
+  end
+  object DatePicker: TRxDateEdit
+    Left = 80
+    Height = 27
+    Top = 88
+    Width = 103
+    ButtonWidth = 23
+    DialogTitle = 'Select a Date'
+    MaxLength = 10
+    PasswordChar = #0
+    PopupColor = clWindow
+    TabOrder = 9
+    Text = '  -  -    '
+  end
+  object CBDone: TCheckBox
+    Left = 554
+    Height = 29
+    Top = 165
+    Width = 22
+    AutoSize = False
+    ParentBidiMode = False
+    TabOrder = 10
+  end
+  object LabelDone: TLabel
+    Left = 480
+    Height = 29
+    Top = 165
+    Width = 72
+    AutoSize = False
+    Caption = 'Done'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object LabelGroup: TLabel
+    Left = 344
+    Height = 29
+    Top = 165
+    Width = 72
+    AutoSize = False
+    Caption = 'Group'
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object GroupEdit: TEdit
+    Left = 416
+    Height = 29
+    Top = 165
+    Width = 48
+    AutoSize = False
+    TabOrder = 11
+  end
+  object CLBStudents: TCheckListBox
+    Left = 80
+    Height = 168
+    Top = 208
+    Width = 496
+    Columns = 2
+    ItemHeight = 0
+    TabOrder = 12
+    TopIndex = -1
+  end
+  object LabelCalendar7: TLabel
+    Left = 8
+    Height = 29
+    Top = 208
+    Width = 72
+    AutoSize = False
+    Caption = 'Students'
+    Layout = tlCenter
+    ParentColor = False
+  end
+end

@@ -1,0 +1,311 @@
+object FrameEvaluation: TFrameEvaluation
+  Left = 0
+  Height = 502
+  Top = 0
+  Width = 910
+  ClientHeight = 502
+  ClientWidth = 910
+  TabOrder = 0
+  DesignLeft = 345
+  DesignTop = 146
+  object Panel1: TPanel
+    Left = 0
+    Height = 456
+    Top = 0
+    Width = 448
+    Align = alLeft
+    BevelOuter = bvNone
+    ClientHeight = 456
+    ClientWidth = 448
+    TabOrder = 0
+    object PanelCourses: TPanel
+      Left = 0
+      Height = 128
+      Top = 0
+      Width = 448
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 128
+      ClientWidth = 448
+      TabOrder = 0
+      object LabelCourse: TLabel
+        Left = 8
+        Height = 29
+        Top = 8
+        Width = 72
+        AutoSize = False
+        Caption = 'Course'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object LookupComboCourses: TRxDBLookupCombo
+        Left = 80
+        Height = 29
+        Top = 8
+        Width = 358
+        AutoSize = True
+        Anchors = [akTop, akLeft, akRight]
+        ButtonOnlyWhenFocused = False
+        ButtonWidth = 24
+        Color = clWindow
+        DirectInput = False
+        PopUpFormOptions.Columns = <>
+        Flat = False
+        Glyph.Data = {
+          C2000000424DC200000000000000360000002800000007000000050000000100
+          2000000000008C00000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000FF0000000000000000000000000000000000000000000000FF0000
+          00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+          00FF000000FF0000000000000000000000000000000000000000000000000000
+          000000000000
+        }
+        NumGlyphs = 1
+        ParentColor = False
+        ReadOnly = False
+        TabOrder = 0
+        TabStop = True
+        LookupDisplay = 'name'
+        LookupField = 'id'
+        LookupSource = Data.DCourses
+        UnfindedValue = rxufLastSuccessful
+      end
+      object LabelSubject: TLabel
+        Left = 8
+        Height = 29
+        Top = 48
+        Width = 72
+        AutoSize = False
+        Caption = 'Subject'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object LookupComboSubjects: TRxDBLookupCombo
+        Left = 80
+        Height = 29
+        Top = 48
+        Width = 358
+        AutoSize = True
+        Anchors = [akTop, akLeft, akRight]
+        ButtonOnlyWhenFocused = False
+        ButtonWidth = 24
+        Color = clWindow
+        DirectInput = False
+        PopUpFormOptions.Columns = <>
+        Flat = False
+        Glyph.Data = {
+          C2000000424DC200000000000000360000002800000007000000050000000100
+          2000000000008C00000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000FF0000000000000000000000000000000000000000000000FF0000
+          00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+          00FF000000FF0000000000000000000000000000000000000000000000000000
+          000000000000
+        }
+        NumGlyphs = 1
+        ParentColor = False
+        ReadOnly = False
+        TabOrder = 1
+        TabStop = True
+        LookupDisplay = 'name'
+        LookupField = 'id'
+        LookupSource = Data.DCourseSubjects
+        UnfindedValue = rxufLastSuccessful
+      end
+      object LookupComboModules: TRxDBLookupCombo
+        Left = 80
+        Height = 29
+        Top = 88
+        Width = 358
+        AutoSize = True
+        Anchors = [akTop, akLeft, akRight]
+        ButtonOnlyWhenFocused = False
+        ButtonWidth = 24
+        Color = clWindow
+        DataField = 'UserField7'
+        DataSource = Data.DEvents
+        DirectInput = False
+        PopUpFormOptions.Columns = <>
+        Flat = False
+        Glyph.Data = {
+          C2000000424DC200000000000000360000002800000007000000050000000100
+          2000000000008C00000064000000640000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000FF0000000000000000000000000000000000000000000000FF0000
+          00FF000000FF000000000000000000000000000000FF000000FF000000FF0000
+          00FF000000FF0000000000000000000000000000000000000000000000000000
+          000000000000
+        }
+        NumGlyphs = 1
+        ParentColor = False
+        ReadOnly = False
+        TabOrder = 2
+        TabStop = True
+        LookupDisplay = 'name'
+        LookupField = 'id'
+        LookupSource = Data.DCourseModules
+      end
+      object LabelCalendar7: TLabel
+        Left = 8
+        Height = 29
+        Top = 88
+        Width = 72
+        AutoSize = False
+        Caption = 'Module'
+        Layout = tlCenter
+        ParentColor = False
+      end
+    end
+    object GridTests: TRxDBGrid
+      Left = 0
+      Height = 328
+      Top = 128
+      Width = 448
+      ColumnDefValues.BlobText = '(blob)'
+      TitleButtons = False
+      AutoSort = True
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 1
+    end
+  end
+  object PButtons: TPanel
+    Left = 0
+    Height = 46
+    Top = 456
+    Width = 910
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 46
+    ClientWidth = 910
+    TabOrder = 1
+    object BOK: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Insert'
+      TabOrder = 0
+    end
+    object BCancel: TBitBtn
+      Left = 104
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Delete'
+      TabOrder = 1
+    end
+    object BSaveAll: TBitBtn
+      Left = 653
+      Height = 30
+      Top = 8
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Save Changes'
+      TabOrder = 2
+      Visible = False
+    end
+    object BCancelAll: TBitBtn
+      Left = 789
+      Height = 30
+      Top = 8
+      Width = 112
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel Changes'
+      TabOrder = 3
+      Visible = False
+    end
+    object UpDownSession: TUpDown
+      Left = 200
+      Height = 30
+      Top = 8
+      Width = 64
+      Min = 0
+      Orientation = udHorizontal
+      Position = 0
+      TabOrder = 4
+      Wrap = False
+    end
+  end
+  object SLessons: TSplitter
+    Left = 448
+    Height = 456
+    Top = 0
+    Width = 5
+  end
+  object Panel2: TPanel
+    Left = 453
+    Height = 456
+    Top = 0
+    Width = 457
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'Panel2'
+    TabOrder = 3
+  end
+end
